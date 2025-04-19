@@ -1,6 +1,11 @@
-import "@/styles/globals.css";
-import type { AppProps } from "next/app";
+import type { AppProps } from 'next/app';
+import '@/styles/globals.css';
+import { gruvbox } from '@/styles/theme';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <div style={{ backgroundColor: gruvbox.bg, minHeight: '100vh' }}>
+      <Component {...pageProps} />
+    </div>
+  );
 }
