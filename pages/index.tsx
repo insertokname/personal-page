@@ -5,7 +5,7 @@ import { getFiles } from '@/lib/data';
 
 export default function Home({ files }: FileListProps) {
   return (
-    <div className="p-8 min-h-screen bg-gruvbox-bg">
+    <div className="p-4 sm:p-8 min-h-screen bg-gruvbox-bg">
       <h1 className="mb-4 text-2xl">
         File Explorer
       </h1>

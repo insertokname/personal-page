@@ -10,8 +10,5 @@ export async function getFiles(): Promise<File[]> {
     { id: 6, name: 'app-screenshot.png', type: 'PNG image', dateModified: '2023-10-24 05:45 PM', size: '350 KB', icon: '🖼️' },
   ];
   
-  // Simulate server delay
-  await new Promise(resolve => setTimeout(resolve, 100));
-  
   return filesData;
 }
