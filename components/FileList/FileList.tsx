@@ -1,4 +1,4 @@
-import { FileListProps } from '@/types';
+import { FileListProps } from '@/types/File';
 import FileListHeader from './FileListHeader';
 import FileRow from './FileRow';
 

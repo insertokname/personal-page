@@ -1,70 +1,103 @@
 @import "tailwindcss";
 
-@theme .theme-white {
-    --color-gruvbox-bg_h: #f9f5d7;
-    --color-gruvbox-bg: #fbf1c7;
-    --color-gruvbox-bg_s: #f2e5bc;
-    --color-gruvbox-bg1: #ebdbb2;
-    --color-gruvbox-bg2: #d5c4a1;
-    --color-gruvbox-bg3: #bdae93;
-    --color-gruvbox-bg4: #a89984;
+.theme-white {
+    --gruvbox-bg_h: #f9f5d7;
+    --gruvbox-bg: #fbf1c7;
+    --gruvbox-bg_s: #f2e5bc;
+    --gruvbox-bg1: #ebdbb2;
+    --gruvbox-bg2: #d5c4a1;
+    --gruvbox-bg3: #bdae93;
+    --gruvbox-bg4: #a89984;
 
-    --color-gruvbox-fg: #282828;
-    --color-gruvbox-fg1: #3c3836;
-    --color-gruvbox-fg2: #504945;
-    --color-gruvbox-fg3: #665c54;
-    --color-gruvbox-fg4: #7c6f64;
+    --gruvbox-fg: #282828;
+    --gruvbox-fg1: #3c3836;
+    --gruvbox-fg2: #504945;
+    --gruvbox-fg3: #665c54;
+    --gruvbox-fg4: #7c6f64;
 
-    --color-gruvbox-red: #9d0006;
-    --color-gruvbox-green: #79740e;
-    --color-gruvbox-yellow: #b57614;
-    --color-gruvbox-blue: #076678;
-    --color-gruvbox-purple: #8f3f71;
-    --color-gruvbox-aqua: #427b58;
-    --color-gruvbox-orange: #af3a03;
-    --color-gruvbox-gray: #928374;
+    --gruvbox-red: #9d0006;
+    --gruvbox-green: #79740e;
+    --gruvbox-yellow: #b57614;
+    --gruvbox-blue: #076678;
+    --gruvbox-purple: #8f3f71;
+    --gruvbox-aqua: #427b58;
+    --gruvbox-orange: #af3a03;
+    --gruvbox-gray: #928374;
 
-    --color-gruvbox-red-dim: #cc2412;
-    --color-gruvbox-green-dim: #98971a;
-    --color-gruvbox-yellow-dim: #d79921;
-    --color-gruvbox-blue-dim: #458598;
-    --color-gruvbox-purple-dim: #b16286;
-    --color-gruvbox-aqua-dim: #689d6a;
-    --color-gruvbox-orange-dim: #d65d0e;
-    --color-gruvbox-gray-dim: #7c6f64;
-
+    --gruvbox-red-dim: #cc2412;
+    --gruvbox-green-dim: #98971a;
+    --gruvbox-yellow-dim: #d79921;
+    --gruvbox-blue-dim: #458598;
+    --gruvbox-purple-dim: #b16286;
+    --gruvbox-aqua-dim: #689d6a;
+    --gruvbox-orange-dim: #d65d0e;
+    --gruvbox-gray-dim: #7c6f64;
 }
 
-@theme .theme-dark {
-    --color-gruvbox-bg_h: #1d2021;
-    --color-gruvbox-bg: #282828;
-    --color-gruvbox-bg_s: #32302f;
-    --color-gruvbox-bg1: #3c3836;
-    --color-gruvbox-bg2: #504945;
-    --color-gruvbox-bg3: #665c54;
-    --color-gruvbox-bg4: #7c6f64;
+.theme-dark {
+    --gruvbox-bg_h: #1d2021;
+    --gruvbox-bg: #282828;
+    --gruvbox-bg_s: #32302f;
+    --gruvbox-bg1: #3c3836;
+    --gruvbox-bg2: #504945;
+    --gruvbox-bg3: #665c54;
+    --gruvbox-bg4: #7c6f64;
 
-    --color-gruvbox-fg: #fbf1c7;
-    --color-gruvbox-fg1: #ebdbb2;
-    --color-gruvbox-fg2: #d5c4a1;
-    --color-gruvbox-fg3: #bdae93;
-    --color-gruvbox-fg4: #a89984;
+    --gruvbox-fg: #fbf1c7;
+    --gruvbox-fg1: #ebdbb2;
+    --gruvbox-fg2: #d5c4a1;
+    --gruvbox-fg3: #bdae93;
+    --gruvbox-fg4: #a89984;
 
-    --color-gruvbox-red: #fb4934;
-    --color-gruvbox-green: #b8bb26;
-    --color-gruvbox-yellow: #fabd2f;
-    --color-gruvbox-blue: #83a598;
-    --color-gruvbox-purple: #d3869b;
-    --color-gruvbox-aqua: #8ec07c;
-    --color-gruvbox-gray: #928374;
-    --color-gruvbox-orange: #fe8019;
+    --gruvbox-red: #fb4934;
+    --gruvbox-green: #b8bb26;
+    --gruvbox-yellow: #fabd2f;
+    --gruvbox-blue: #83a598;
+    --gruvbox-purple: #d3869b;
+    --gruvbox-aqua: #8ec07c;
+    --gruvbox-gray: #928374;
+    --gruvbox-orange: #fe8019;
 
-    --color-gruvbox-red-dim: #cc2412;
-    --color-gruvbox-green-dim: #98971a;
-    --color-gruvbox-yellow-dim: #d79921;
-    --color-gruvbox-blue-dim: #458588;
-    --color-gruvbox-purple-dim: #b16286;
-    --color-gruvbox-aqua-dim: #689d6a;
-    --color-gruvbox-gray-dim: #a89984;
-    --color-gruvbox-orange-dim: #d65d0e;
+    --gruvbox-red-dim: #cc2412;
+    --gruvbox-green-dim: #98971a;
+    --gruvbox-yellow-dim: #d79921;
+    --gruvbox-blue-dim: #458588;
+    --gruvbox-purple-dim: #b16286;
+    --gruvbox-aqua-dim: #689d6a;
+    --gruvbox-gray-dim: #a89984;
+    --gruvbox-orange-dim: #d65d0e;
+}
+
+@theme {
+    --color-gruvbox-bg_h: var(--gruvbox-bg_h);
+    --color-gruvbox-bg: var(--gruvbox-bg);
+    --color-gruvbox-bg_s: var(--gruvbox-bg_s);
+    --color-gruvbox-bg1: var(--gruvbox-bg1);
+    --color-gruvbox-bg2: var(--gruvbox-bg2);
+    --color-gruvbox-bg3: var(--gruvbox-bg3);
+    --color-gruvbox-bg4: var(--gruvbox-bg4);
+
+    --color-gruvbox-fg: var(--gruvbox-fg);
+    --color-gruvbox-fg1: var(--gruvbox-fg1);
+    --color-gruvbox-fg2: var(--gruvbox-fg2);
+    --color-gruvbox-fg3: var(--gruvbox-fg3);
+    --color-gruvbox-fg4: var(--gruvbox-fg4);
+
+    --color-gruvbox-red: var(--gruvbox-red);
+    --color-gruvbox-green: var(--gruvbox-green);
+    --color-gruvbox-yellow: var(--gruvbox-yellow);
+    --color-gruvbox-blue: var(--gruvbox-blue);
+    --color-gruvbox-purple: var(--gruvbox-purple);
+    --color-gruvbox-aqua: var(--gruvbox-aqua);
+    --color-gruvbox-orange: var(--gruvbox-orange);
+    --color-gruvbox-gray: var(--gruvbox-gray);
+
+    --color-gruvbox-red-dim: var(--color-red-di);
+    --color-gruvbox-green-dim: var(--color-green-di);
+    --color-gruvbox-yellow-dim: var(--color-yellow-di);
+    --color-gruvbox-blue-dim: var(--color-blue-di);
+    --color-gruvbox-purple-dim: var(--color-purple-di);
+    --color-gruvbox-aqua-dim: var(--color-aqua-di);
+    --color-gruvbox-orange-dim: var(--color-orange-di);
+    --color-gruvbox-gray-dim: var(--color-gray-di);
 }

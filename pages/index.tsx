@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import FileList from '@/components/FileList';
 import { FileListProps } from '@/types/File';
 import { getFiles } from '@/lib/data';
+import ThemeToggle from '@/components/ThemeToggle';
 
 export default function Home({ files }: FileListProps) {
   return (
@@ -9,12 +10,13 @@ export default function Home({ files }: FileListProps) {
       <h1 className="mb-4 text-2xl">
         File Explorer
       </h1>
+      <ThemeToggle></ThemeToggle>
       <FileList files={files} />
     </div>
   );
 }
 
-export const getServerSideProps: GetServerSideProps<FileListProps> = async () => {
+export const getStaticProps: GetServerSideProps<FileListProps> = async () => {
   const files = await getFiles();
 
   return {
