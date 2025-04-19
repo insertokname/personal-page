@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import FileList from '@/components/FileList';
-import { FileListProps } from '@/types';
+import { FileListProps } from '@/types/File';
 import { getFiles } from '@/lib/data';
 
 export default function Home({ files }: FileListProps) {

@@ -1,4 +1,4 @@
-import { File } from '@/types';
+import { File } from '@/types/File';
 
 interface FileRowProps {
   file: File;

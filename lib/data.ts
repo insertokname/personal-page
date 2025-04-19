@@ -1,4 +1,4 @@
-import { File } from '@/types';
+import { File } from '@/types/File';
 
 export async function getFiles(): Promise<File[]> {
   const filesData: File[] = [
