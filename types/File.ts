@@ -1,12 +1,9 @@
+import IconProps from "@/components/icons/IconProps";
+import { JSX } from "react";
+
 export interface File {
-  id: number;
   name: string;
   type: string;
   dateModified: string;
-  size: string;
-  icon: string;
-}
-
-export interface FileListProps {
-  files: File[];
+  icon: React.ComponentType<IconProps>;
 }
