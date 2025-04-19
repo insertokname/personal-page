@@ -1,13 +1,12 @@
-import { gruvbox } from '@/styles/theme';
 
 export default function FileListHeader() {
   return (
-    <thead style={{ backgroundColor: gruvbox.bg2, borderColor: gruvbox.bg3 }} className="border-b">
+    <thead className="border-b border-gruvbox-bg2">
       <tr>
-        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider w-1/2" style={{ color: gruvbox.brightAqua }}>Name</th>
-        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider" style={{ color: gruvbox.brightAqua }}>Date modified</th>
-        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider" style={{ color: gruvbox.brightAqua }}>Type</th>
-        <th className="px-4 py-2 text-right text-xs uppercase tracking-wider" style={{ color: gruvbox.brightAqua }}>Size</th>
+        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider w-1/2 text-gruvbox-blue">Name</th>
+        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider text-gruvbox-blue">Date modified</th>
+        <th className="px-4 py-2 text-left text-xs uppercase tracking-wider text-gruvbox-blue">Type</th>
+        <th className="px-4 py-2 text-right text-xs uppercase tracking-wider text-gruvbox-blue">Size</th>
       </tr>
     </thead>
   );

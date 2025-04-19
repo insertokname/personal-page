@@ -1,8 +1,6 @@
 import { File } from '@/types';
 
 export async function getFiles(): Promise<File[]> {
-  // In a real app, this would be an API call
-  // For this example, we'll use mock data
   const filesData: File[] = [
     { id: 1, name: 'Documents', type: 'File folder', dateModified: '2023-10-26 10:00 AM', size: '', icon: '📁' },
     { id: 2, name: 'Images', type: 'File folder', dateModified: '2023-10-25 03:15 PM', size: '', icon: '📁' },
