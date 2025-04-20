@@ -1,12 +1,17 @@
 import { File } from '@/types/File';
+import { useFile } from '@/contexts/FileContext';
 
 interface FileRowProps {
   file: File;
 }
 
 export default function FileRow({ file }: FileRowProps) {
+  const { open } = useFile();
+
   return (
-    <tr className="cursor-pointer hover:opacity-90 border-gruvbox-bg2 hover:bg-gruvbox-bg2 active:bg-gruvbox-bg4">
+    <tr
+      className="cursor-pointer hover:opacity-90 border-gruvbox-bg2 hover:bg-gruvbox-bg2 active:bg-gruvbox-bg4"
+      onClick={() => open(file)}>
       <td className={`select-none px-4 py-2 whitespace-nowrap ${file.type.includes("folder") ? "text-gruvbox-blue" : ""}`}>
         <file.icon className='mr-3 inline' />
         {file.name}

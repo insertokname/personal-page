@@ -13,7 +13,7 @@ export default function FileList({ files }: FileListProps) {
         <FileListHeader />
         <tbody className="divide-y">
           {files.map((file) => (
-            <FileRow key={file.id} file={file} />
+            <FileRow key={file.name} file={file} />
           ))}
         </tbody>
       </table>

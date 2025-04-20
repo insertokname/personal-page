@@ -35,9 +35,9 @@
 }
 
 .theme-dark {
-    --gruvbox-bg_h: #1d2021;
+    --gruvbox-bg_h: #32302f;
     --gruvbox-bg: #282828;
-    --gruvbox-bg_s: #32302f;
+    --gruvbox-bg_s: #1d2021;
     --gruvbox-bg1: #3c3836;
     --gruvbox-bg2: #504945;
     --gruvbox-bg3: #665c54;
@@ -92,12 +92,12 @@
     --color-gruvbox-orange: var(--gruvbox-orange);
     --color-gruvbox-gray: var(--gruvbox-gray);
 
-    --color-gruvbox-red-dim: var(--color-red-di);
-    --color-gruvbox-green-dim: var(--color-green-di);
-    --color-gruvbox-yellow-dim: var(--color-yellow-di);
-    --color-gruvbox-blue-dim: var(--color-blue-di);
-    --color-gruvbox-purple-dim: var(--color-purple-di);
-    --color-gruvbox-aqua-dim: var(--color-aqua-di);
-    --color-gruvbox-orange-dim: var(--color-orange-di);
-    --color-gruvbox-gray-dim: var(--color-gray-di);
+    --color-gruvbox-red-dim: var(--gruvbox-red-dim);
+    --color-gruvbox-green-dim: var(--gruvbox-green-dim);
+    --color-gruvbox-yellow-dim: var(--gruvbox-yellow-dim);
+    --color-gruvbox-blue-dim: var(--gruvbox-blue-dim);
+    --color-gruvbox-purple-dim: var(--gruvbox-purple-dim);
+    --color-gruvbox-aqua-dim: var(--gruvbox-aqua-dim);
+    --color-gruvbox-orange-dim: var(--gruvbox-orange-dim);
+    --color-gruvbox-gray-dim: var(--gruvbox-gray-dim);
 }
