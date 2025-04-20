@@ -1,8 +1,8 @@
-import { File } from '@/types/File';
+import { FileItem } from '@/types/File';
 import { useFile } from '@/contexts/FileContext';
 
 interface FileRowProps {
-  file: File;
+  file: FileItem;
 }
 
 export default function FileRow({ file }: FileRowProps) {

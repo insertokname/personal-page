@@ -1,9 +1,9 @@
-import { File } from '@/types/File';
+import { FileItem } from '@/types/File';
 import FileListHeader from './FileListHeader';
 import FileRow from './FileRow';
 
 export interface FileListProps {
-  files: File[];
+  files: FileItem[];
 }
 
 export default function FileList({ files }: FileListProps) {

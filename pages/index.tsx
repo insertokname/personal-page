@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import FileList from '@/components/FileList';
-import { File } from '@/types/File'
+import { FileItem } from '@/types/File'
 import ThemeToggle from '@/components/ThemeToggle';
 import FileIcon from '@/components/icons/FileIcon';
 import FolderIcon from '@/components/icons/FolderIcon';
@@ -12,7 +12,7 @@ import { useFile } from '@/contexts/FileContext';
 export default function Home() {
   const { openFiles } = useFile();
 
-  const files: File[] = [
+  const files: FileItem[] = [
     { name: 'Documents', type: 'File folder', dateModified: '2023-10-26 10:00 AM', icon: FolderIcon },
     { name: 'Images', type: 'File folder', dateModified: '2023-10-25 03:15 PM', icon: FolderIcon },
     { name: 'Projects', type: 'File folder', dateModified: '2023-10-26 09:30 AM', icon: FolderIcon },

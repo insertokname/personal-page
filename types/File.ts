@@ -1,7 +1,6 @@
 import IconProps from "@/components/icons/IconProps";
-import { JSX } from "react";
 
-export interface File {
+export interface FileItem {
   name: string;
   type: string;
   dateModified: string;
