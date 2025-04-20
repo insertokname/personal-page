@@ -1,5 +1,5 @@
-import { FileItem } from '@/types/File';
 import { useFile } from '@/contexts/FileContext';
+import { FileItem } from '../Files';
 
 interface FileRowProps {
   file: FileItem;

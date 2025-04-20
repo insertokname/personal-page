@@ -1,4 +1,4 @@
-import { FileItem } from '@/types/File';
+import { FileItem } from '@/components/Files';
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface FileContextType {

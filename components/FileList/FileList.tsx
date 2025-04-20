@@ -1,4 +1,4 @@
-import { FileItem } from '@/types/File';
+import { FileItem } from '../Files';
 import FileListHeader from './FileListHeader';
 import FileRow from './FileRow';
 

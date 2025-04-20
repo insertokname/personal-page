@@ -1,7 +1,7 @@
 import { useFile } from '@/contexts/FileContext';
-import { FileItem } from '@/types/File';
 import React, { useState, useRef, useEffect } from 'react';
 import CloseIcon from './icons/CloseIcon';
+import { FileItem } from './Files';
 
 interface DraggableWindowProps {
   file: FileItem;
@@ -75,8 +75,12 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
   return (
     <div
       ref={wnd}
-      className="fixed bg-gruvbox-bg_h shadow-xl rounded border border-gruvbox-bg_s w-80"
-      style={{ top: pos.y, left: pos.x }}
+      className={"fixed bg-gruvbox-bg_h shadow-xl rounded border border-gruvbox-bg_s"}
+      style={{
+        top: pos.y,
+        left: pos.x,
+        width: file.width??500
+      }}
     >
       <div
         ref={headerRef}

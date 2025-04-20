@@ -1,25 +1,15 @@
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import FileList from '@/components/FileList';
-import { FileItem } from '@/types/File'
 import ThemeToggle from '@/components/ThemeToggle';
-import FileIcon from '@/components/icons/FileIcon';
-import FolderIcon from '@/components/icons/FolderIcon';
-import PhotoIcon from '@/components/icons/PhotoIcon';
 import { DraggableWindow } from '../components/DraggableWindow';
 import { useFile } from '@/contexts/FileContext';
+import getRoot, { FileItem } from '@/components/Files';
 
 export default function Home() {
   const { openFiles } = useFile();
 
-  const files: FileItem[] = [
-    { name: 'Documents', type: 'File folder', dateModified: '2023-10-26 10:00 AM', icon: FolderIcon },
-    { name: 'Images', type: 'File folder', dateModified: '2023-10-25 03:15 PM', icon: FolderIcon },
-    { name: 'Projects', type: 'File folder', dateModified: '2023-10-26 09:30 AM', icon: FolderIcon },
-    { name: 'resume_final.pdf', type: 'PDF Document', dateModified: '2023-10-20 11:20 AM', icon: FileIcon },
-    { name: 'notes.txt', type: 'Text Document', dateModified: '2023-10-26 10:05 AM', icon: FileIcon },
-    { name: 'app-screenshot.png', type: 'PNG image', dateModified: '2023-10-24 05:45 PM', icon: PhotoIcon },
-  ];
+  const files: FileItem[] = getRoot();
 
   return (
     <div className='flex bg-gruvbox-bg min-h-screen justify-center items-start pt-22'>
@@ -32,7 +22,9 @@ export default function Home() {
         </div>
         <FileList files={files} />
         {openFiles && openFiles.map((openFile) => (
-          <DraggableWindow key={openFile.name} file={openFile} children={<openFile.icon />} />
+          <DraggableWindow key={openFile.name} file={openFile}>
+            <openFile.content />
+          </DraggableWindow>
         ))}
       </div>
     </div>
