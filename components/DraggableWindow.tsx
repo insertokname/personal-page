@@ -1,10 +1,10 @@
 import { useFile } from '@/contexts/FileContext';
 import React, { useState, useRef, useEffect } from 'react';
 import CloseIcon from './icons/CloseIcon';
-import { FileItem } from './Files';
+import { SingleFileType } from './Files/types';
 
 interface DraggableWindowProps {
-  file: FileItem;
+  file: SingleFileType;
   children: React.ReactNode;
 }
 

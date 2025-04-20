@@ -1,19 +1,19 @@
-import { FileItem } from '@/components/Files';
+import { SingleFileType } from '@/components/Files/types';
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 interface FileContextType {
-  openFiles: FileItem[];
-  open: (file: FileItem) => void;
-  close: (file: FileItem) => void;
+  openFiles: SingleFileType[];
+  open: (file: SingleFileType) => void;
+  close: (file: SingleFileType) => void;
 }
 
 const FileContext = createContext<FileContextType | undefined>(undefined);
 
 export const FileProvider = ({ children }: { children: ReactNode }) => {
-  const [openFiles, setOpenFiles] = useState<FileItem[]>([]);
-  const open = (file: FileItem) =>
+  const [openFiles, setOpenFiles] = useState<SingleFileType[]>([]);
+  const open = (file: SingleFileType) =>
     setOpenFiles(prev => (prev.find((f) => f.name == file.name) != undefined ? prev : [...prev, file]));
-  const close = (file: FileItem) =>
+  const close = (file: SingleFileType) =>
     setOpenFiles(prev => prev.filter(f => f.name !== file.name));
 
   return (

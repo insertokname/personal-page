@@ -4,12 +4,9 @@ import FileList from '@/components/FileList';
 import ThemeToggle from '@/components/ThemeToggle';
 import { DraggableWindow } from '../components/DraggableWindow';
 import { useFile } from '@/contexts/FileContext';
-import getRoot, { FileItem } from '@/components/Files';
 
 export default function Home() {
   const { openFiles } = useFile();
-
-  const files: FileItem[] = getRoot();
 
   return (
     <div className='flex bg-gruvbox-bg min-h-screen justify-center items-start pt-22'>
@@ -20,7 +17,7 @@ export default function Home() {
           </h1>
           <ThemeToggle />
         </div>
-        <FileList files={files} />
+        <FileList />
         {openFiles && openFiles.map((openFile) => (
           <DraggableWindow key={openFile.name} file={openFile}>
             <openFile.content />
