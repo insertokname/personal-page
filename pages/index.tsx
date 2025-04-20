@@ -17,14 +17,16 @@ export default function Home() {
   ];
 
   return (
-    <div className="p-4 sm:p-8 min-h-screen bg-gruvbox-bg">
-      <div className='mb-4 flex justify-between'>
-        <h1 className="text-2xl">
-          File Explorer
-        </h1>
-        <ThemeToggle />
+    <div className='flex bg-gruvbox-bg min-h-screen justify-center items-start pt-22'>
+      <div className="min-w-[80%] sm:min-w-[75%] md:min-w-[70%]">
+        <div className='mb-4 flex justify-between'>
+          <h1 className="text-2xl">
+            Ilie Demian
+          </h1>
+          <ThemeToggle />
+        </div>
+        <FileList files={files} />
       </div>
-      <FileList files={files} />
     </div>
   );
 }
