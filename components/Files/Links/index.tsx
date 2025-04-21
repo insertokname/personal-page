@@ -1,13 +1,13 @@
 import FolderIcon from '@/components/icons/FolderIcon';
 import { FileItem } from '../types';
-import { SnekFile } from './SnekFile';
+import { GithubLink } from './GithubLink';
 
-export const ProjectsDirectory = new FileItem({
+export const LinksDirectory = new FileItem({
     type: {
-        name: "Projects",
+        name: "Links",
         kind: 'directory',
         description: 'File folder',
-        children: [SnekFile],
+        children: [GithubLink],
     },
     icon: FolderIcon
 });

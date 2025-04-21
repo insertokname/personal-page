@@ -1,3 +1,4 @@
+import { LinksDirectory } from "./Links";
 import { MeFile } from "./MeFile";
 import { ProjectsDirectory } from "./Projects";
 import { DirectoryFileType } from "./types";
@@ -7,6 +8,6 @@ export default function getRoot(): DirectoryFileType {
         name: "root",
         kind: "directory",
         description: "File folder",
-        children: [MeFile, ProjectsDirectory],
+        children: [MeFile, ProjectsDirectory, LinksDirectory],
     };
 };

@@ -17,15 +17,24 @@ export interface SingleFileType {
     width?: number
 }
 
-export type FileType = DirectoryFileType | SingleFileType;
+export interface LinkFileType {
+    name: string
+    kind: "link"
+    description: string
+    url: string
+}
+
+export type FileType = DirectoryFileType | SingleFileType | LinkFileType;
 
 export class FileItem {
     key: string;
     type: FileType;
+    color: string;
     icon: React.ComponentType<IconProps>;
-    constructor(params: { type: FileType, icon: React.ComponentType<IconProps> }) {
+    constructor(params: { type: FileType, icon: React.ComponentType<IconProps>, color?: string }) {
         this.key = uuidv4();
         this.type = params.type;
         this.icon = params.icon;
+        this.color = params.color ?? "var(--color-gruvbox-fg)"
     }
 }
