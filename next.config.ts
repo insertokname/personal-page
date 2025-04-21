@@ -1,12 +1,13 @@
 import type { NextConfig } from "next";
 
-const isAction = process.env.DEPLOY_IS_GH_ACTION ==  'true';
+const isAction = process.env.DEPLOY_IS_GH_ACTION === 'true';
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
   output: 'export',
-  basePath: isAction? '/personal-page':'',
+  basePath: isAction ? '/personal-page' : '',
+  assetPrefix: isAction ? '/personal-page' : '',
+  trailingSlash: true,
 };
 
 export default nextConfig;
