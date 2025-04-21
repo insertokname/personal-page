@@ -24,6 +24,7 @@ jobs:
         env:
           DEPLOY_IS_GH_ACTION: 'true'
         run: |
+          touch .nojekyll
           npm run build
 
       - name: Deploy to GitHub Pages
