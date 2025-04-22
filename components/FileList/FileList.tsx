@@ -1,6 +1,7 @@
 import { usePath } from '@/contexts/PathContext';
 import FileListHeader from './FileListHeader';
 import FileRow from './FileRow';
+import ReturnIcon from '../icons/ReturnIcon';
 
 export default function FileList() {
   const { path, pop } = usePath();
@@ -21,11 +22,11 @@ export default function FileList() {
       <table className="min-w-full text-sm">
         <FileListHeader />
         <tbody className="divide-y">
-          {path.length>1 && <tr
+          {path.length > 1 && <tr
             className="cursor-pointer hover:opacity-90 border-gruvbox-bg2 hover:bg-gruvbox-bg2 active:bg-gruvbox-bg4"
             onClick={() => pop()}>
             <td className="select-none px-4 py-2 whitespace-nowrap text-gruvbox-blue">
-              ..
+              <ReturnIcon className='mr-3 inline align-middle' />
             </td>
             <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3"></td>
             <td className="select-none hidden sm:table-cell px-4 py-2 whitespace-nowrap text-right text-gruvbox-fg3"></td>
