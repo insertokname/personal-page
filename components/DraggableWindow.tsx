@@ -3,6 +3,9 @@ import React, { useState, useRef, useEffect } from 'react';
 import CloseIcon from './icons/CloseIcon';
 import { SingleFileType } from './Files/types';
 
+let windowCount = 10;
+const OFFSET_STEP = 30;
+
 interface DraggableWindowProps {
   file: SingleFileType;
   children: React.ReactNode;
@@ -10,7 +13,14 @@ interface DraggableWindowProps {
 
 export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
   const { close } = useFile();
-  const [pos, setPos] = useState({ x: 100, y: 100 });
+  const [pos, setPos] = useState(() => {
+    const initial = {
+      x: 100 + (windowCount * OFFSET_STEP % (window.innerWidth / 2)),
+      y: 100 + (windowCount * OFFSET_STEP % (window.innerHeight - 200)),
+    };
+    windowCount++;
+    return initial;
+  });
   const [dragging, setDragging] = useState(false);
   const offset = useRef({ x: 0, y: 0 });
   const wnd = useRef<HTMLDivElement>(null);
@@ -79,7 +89,7 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
       style={{
         top: pos.y,
         left: pos.x,
-        width: file.width??500
+        width: file.width ?? 500
       }}
     >
       <div
