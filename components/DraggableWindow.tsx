@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import CloseIcon from './icons/CloseIcon';
 import { SingleFileType } from './Files/types';
 
-let windowCount = 10;
+let windowCount = 0;
 const OFFSET_STEP = 30;
 
 interface DraggableWindowProps {
@@ -15,8 +15,8 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
   const { close } = useFile();
   const [pos, setPos] = useState(() => {
     const initial = {
-      x: 100 + (windowCount * OFFSET_STEP % (window.innerWidth / 2)),
-      y: 100 + (windowCount * OFFSET_STEP % (window.innerHeight - 200)),
+      x: (window.innerWidth / 10) + (windowCount * OFFSET_STEP % (window.innerWidth / 2)),
+      y: (window.innerHeight / 10) + (windowCount * OFFSET_STEP % (window.innerHeight - 200)),
     };
     windowCount++;
     return initial;
@@ -25,6 +25,9 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
   const offset = useRef({ x: 0, y: 0 });
   const wnd = useRef<HTMLDivElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
+  const [calcWidth, setCalcWidth] = useState(() =>
+    typeof window !== 'undefined' && window.innerWidth < 600 ? window.innerWidth * 0.8 : file.width ?? 500
+  );
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -64,6 +67,14 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
     };
   }, [dragging]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setCalcWidth(window.innerWidth < 768 ? window.innerWidth * 0.8 : file.width ?? 500);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [file.width]);
+
   const onMouseDown = (e: React.MouseEvent) => {
     if (!wnd.current) return;
     const rect = wnd.current.getBoundingClientRect();
@@ -89,7 +100,7 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
       style={{
         top: pos.y,
         left: pos.x,
-        width: file.width ?? 500
+        width: calcWidth
       }}
     >
       <div
