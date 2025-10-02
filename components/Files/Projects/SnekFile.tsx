@@ -37,7 +37,7 @@ export const SnekFile = new FileItem({
         kind: 'single',
         description: 'Executable',
         content: SnekFileContent,
-        dateModified: '2023-10-26 10:05 AM',
+        dateModified: '7 Apr 2025',
     },
     icon: TerminalIcon,
     color: "var(--color-gruvbox-green)"

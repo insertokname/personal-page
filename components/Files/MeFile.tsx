@@ -22,7 +22,7 @@ export const MeFile = new FileItem({
         kind: 'single',
         description: 'Text Document',
         content: MeFileContent,
-        dateModified: '2023-10-26 10:05 AM',
+        dateModified: '18 Apr 2025',
     },
     icon: FileIcon,
 });
