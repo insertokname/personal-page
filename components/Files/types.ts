@@ -1,23 +1,26 @@
 import { v4 as uuidv4 } from 'uuid';
 import IconProps from '../icons/IconProps';
 
-export interface DirectoryFileType {
+interface BaseFile {
+    dateModified?: string
+}
+
+export interface DirectoryFileType extends BaseFile {
     name: string
     kind: "directory"
-    description: "File folder"
+    description: string
     children: FileItem[]
 }
 
-export interface SingleFileType {
+export interface SingleFileType extends BaseFile {
     name: string
     kind: "single"
     description: string
     content: React.ComponentType
-    dateModified: string
     width?: number
 }
 
-export interface LinkFileType {
+export interface LinkFileType extends BaseFile {
     name: string
     kind: "link"
     description: string

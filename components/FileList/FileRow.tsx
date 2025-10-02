@@ -38,7 +38,7 @@ export default function FileRow({ file }: FileRowProps) {
           <file.icon className='mr-3 inline align-middle' />
           {file.type.name}
         </td>
-        <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3"></td>
+        <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3">{file.type.dateModified}</td>
         <td className="select-none hidden sm:table-cell px-4 py-2 whitespace-nowrap text-right text-gruvbox-fg3">{file.type.description}</td>
       </tr >
 
@@ -50,7 +50,7 @@ export default function FileRow({ file }: FileRowProps) {
           <file.icon className='mr-3 inline' />
           {file.type.name}
         </td>
-        <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3"></td>
+        <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3">{file.type.dateModified}</td>
         <td className="select-none hidden sm:table-cell px-4 py-2 whitespace-nowrap text-right text-gruvbox-fg3">{file.type.description}</td>
       </tr >
   }
