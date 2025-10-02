@@ -3,8 +3,9 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html lang="en">
-      <Head />
-      <title>Ilie Demian</title>
+      <Head>
+        <link rel="icon" href="/personal-page/favicon.png" type="image/png" />
+      </Head>
       <body className="antialiased">
         <Main />
         <NextScript />

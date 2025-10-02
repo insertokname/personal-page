@@ -13,7 +13,7 @@ export default function Home() {
       <div className="min-w-[80%] sm:min-w-[75%] md:min-w-[70%]">
         <div className='mb-4 flex justify-between'>
           <h1 className="text-2xl text-gruvbox-green-dim">
-            Ilie Demian
+            Demian Ilie
           </h1>
           <ThemeToggle />
         </div>
