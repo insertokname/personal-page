@@ -29,6 +29,11 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
     typeof window !== 'undefined' && window.innerWidth < 600 ? window.innerWidth * 0.8 : file.width ?? 500
   );
 
+  const isInteractive = (target: EventTarget | null) => {
+    if (!(target instanceof Element)) return false;
+    return !!target.closest('button, a, input, textarea, select, [contenteditable="true"], [data-no-drag], iframe');
+  };
+
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!dragging) return;
@@ -77,6 +82,7 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
 
   const onMouseDown = (e: React.MouseEvent) => {
     if (!wnd.current) return;
+    if (isInteractive(e.target)) return;
     const rect = wnd.current.getBoundingClientRect();
     offset.current = { x: e.clientX - rect.left, y: e.clientY - rect.top };
     setDragging(true);
@@ -84,6 +90,7 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
 
   const onTouchStart = (e: React.TouchEvent) => {
     if (!wnd.current) return;
+    if (isInteractive(e.target)) return;
     const rect = wnd.current.getBoundingClientRect();
     offset.current = {
       x: e.touches[0].clientX - rect.left,
@@ -96,18 +103,18 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
   return (
     <div
       ref={wnd}
-      className={"fixed bg-gruvbox-bg_h shadow-xl rounded border border-gruvbox-bg_s"}
+      className={"fixed bg-gruvbox-bg_h shadow-xl rounded border border-gruvbox-bg_s cursor-move"}
       style={{
         top: pos.y,
         left: pos.x,
         width: calcWidth
       }}
+      onMouseDown={onMouseDown}
+      onTouchStart={onTouchStart}
     >
       <div
         ref={headerRef}
-        className="bg-gruvbox-bg_h px-3 pt-3 flex justify-between items-center cursor-move select-none rounded-t"
-        onMouseDown={onMouseDown}
-        onTouchStart={onTouchStart}
+        className="bg-gruvbox-bg_h px-3 pt-3 flex justify-between items-center select-none rounded-t"
       >
         <span className="text-gruvbox-green text-center">{file.name}</span>
         <button onClick={() => close(file)} className="text-gruvbox-fg hover:text-gruvbox-fg p-1">
