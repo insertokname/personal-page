@@ -1,10 +1,59 @@
 import React, { useEffect } from 'react';
+import type { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import FileList from '@/components/FileList';
 import ThemeToggle from '@/components/ThemeToggle';
 import { DraggableWindow } from '@/components/DraggableWindow';
 import { useFile } from '@/contexts/FileContext';
 import { usePath } from '@/contexts/PathContext';
+import getRoot from '@/components/Files';
+import type { DirectoryFileType } from '@/components/Files/types';
+
+const collectRouteSegments = () => {
+  const root = getRoot();
+  const seen = new Set<string>();
+  const collected: string[][] = [];
+
+  const addPath = (segments: string[]) => {
+    const key = segments.join('/');
+    if (seen.has(key)) {
+      return;
+    }
+    seen.add(key);
+    collected.push([...segments]);
+  };
+
+  const traverseDirectory = (directory: DirectoryFileType, parents: string[]) => {
+    directory.children.forEach(child => {
+      const childType = child.type;
+
+      if (childType.kind === 'directory') {
+        const nextSegments = [...parents, childType.name];
+        addPath(nextSegments);
+        traverseDirectory(childType, nextSegments);
+        return;
+      }
+
+      if (childType.kind === 'single') {
+        addPath([...parents, childType.name]);
+      }
+    });
+  };
+
+  addPath([]);
+  traverseDirectory(root, []);
+
+  return collected.map(segments => ({ params: { path: segments } }));
+};
+
+export const getStaticPaths: GetStaticPaths = async () => ({
+  paths: collectRouteSegments(),
+  fallback: false,
+});
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {},
+});
 
 export default function Home() {
   const router = useRouter();
