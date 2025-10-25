@@ -17,14 +17,14 @@ export default function FileList() {
   const directorySegments = path.slice(1).map(dir => dir.name);
   const currentPathname = router.asPath.split(/[?#]/)[0];
 
-  const sortedFiles = [...files].sort((a, b) => {
-    const aIsDir = a.type.kind == 'directory';
-    const bIsDir = b.type.kind == 'directory';;
-    if (aIsDir !== bIsDir) {
-      return aIsDir ? -1 : 1;
-    }
-    return a.type.name.localeCompare(b.type.name);
-  });
+  // const sortedFiles = [...files].sort((a, b) => {
+  //   const aIsDir = a.type.kind == 'directory';
+  //   const bIsDir = b.type.kind == 'directory';;
+  //   if (aIsDir !== bIsDir) {
+  //     return aIsDir ? -1 : 1;
+  //   }
+  //   return a.type.name.localeCompare(b.type.name);
+  // });
 
   return (
     <div className="overflow-x-auto">
@@ -47,7 +47,7 @@ export default function FileList() {
             <td className="select-none hidden md:table-cell px-4 py-2 whitespace-nowrap text-gruvbox-fg3"></td>
             <td className="select-none hidden sm:table-cell px-4 py-2 whitespace-nowrap text-right text-gruvbox-fg3"></td>
           </tr >}
-          {sortedFiles.map((file) => (
+          {files.map((file) => (
             <FileRow key={file.key} file={file} />
           ))}
         </tbody>

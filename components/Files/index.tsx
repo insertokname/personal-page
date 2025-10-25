@@ -9,6 +9,11 @@ export default function getRoot(): DirectoryFileType {
         name: "root",
         kind: "directory",
         description: "File folder",
-        children: [MeFile, ProjectsDirectory, LinksDirectory, WorkExperience],
+        children: [
+            MeFile,
+            WorkExperience,
+            ProjectsDirectory,
+            LinksDirectory,
+        ],
     };
 };
