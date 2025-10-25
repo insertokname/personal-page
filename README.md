@@ -1,6 +1,6 @@
 This is my personal site 
 
-check it out here [https://insertokname.github.io/personal-page/](https://insertokname.github.io/personal-page/)
+check it out here [https://insertokname.com](https://insertokname.com)
 
 ## Running locally
 
