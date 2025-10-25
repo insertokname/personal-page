@@ -121,7 +121,7 @@ export const DraggableWindow = ({ file, children }: DraggableWindowProps) => {
           <CloseIcon size={26} />
         </button>
       </div>
-      <div className="px-4 pb-4 pt-1 overflow-auto">{children}</div>
+      <div className="px-4 pb-4 pt-1 overflow-auto select-none">{children}</div>
     </div>
   );
 };
