@@ -1,10 +1,9 @@
 import React from 'react';
 import IconProps from './IconProps';
-import Image from 'next/image'
 
 export default class PbinfoIcon extends React.Component<IconProps> {
     render() {
-        return <Image
+        return <img
             className={this.props.className}
             src={"/pbinfo-icon.png"}
             alt="pbinfo icon"
