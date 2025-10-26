@@ -4,7 +4,7 @@ import PbinfoIcon from "@/components/icons/PbinfoIcon"
 export const PbinfoCliLink = new FileItem({
     type: {
         kind: "link",
-        url: "https://github.com/insertokname/depy",
+        url: "https://github.com/insertokname/pbinfo-cli",
         name: "pbinfo-cli",
         description: "a cli client for pbinfo.ro",
         dateModified: "15 May 2025"
