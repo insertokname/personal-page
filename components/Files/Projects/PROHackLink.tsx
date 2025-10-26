@@ -6,7 +6,7 @@ export const PROHackLink = new FileItem({
         kind: "link",
         url: "https://github.com/insertokname/ProHack",
         name: "PROHack",
-        description: "an automated bot for PRO",
+        description: "An automated bot for PRO",
         dateModified: "26 Oct 2025"
     },
     icon: PROIcon,
