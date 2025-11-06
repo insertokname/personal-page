@@ -5,7 +5,7 @@ export default class PbinfoIcon extends React.Component<IconProps> {
     render() {
         return <img
             className={this.props.className}
-            src={"/pbinfo-icon.png"}
+            src={"/pbinfo-icon.webp"}
             alt="pbinfo icon"
             style={{
                 width: `${this.props.size ?? 20}px`,

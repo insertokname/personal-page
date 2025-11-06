@@ -1,3 +1,4 @@
+import { AchievementsAndDiplomasDirectory } from "./AchievementsAndDiplomas";
 import { LinksDirectory } from "./Links";
 import { MeFile } from "./MeFile";
 import { ProjectsDirectory } from "./Projects";
@@ -12,6 +13,7 @@ export default function getRoot(): DirectoryFileType {
         children: [
             MeFile,
             WorkExperience,
+            AchievementsAndDiplomasDirectory,
             ProjectsDirectory,
             LinksDirectory,
         ],

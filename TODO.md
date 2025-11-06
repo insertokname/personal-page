@@ -1,0 +1,1 @@
+double click to enlarge image or some zoom of some kind

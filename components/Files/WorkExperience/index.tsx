@@ -4,7 +4,7 @@ import { PartiaFile as PartiaLink } from './PartiaLink';
 
 export const WorkExperience = new FileItem({
     type: {
-        name: "WorkExperience",
+        name: "Work Experience",
         kind: 'directory',
         description: 'File folder',
         children: [PartiaLink],
