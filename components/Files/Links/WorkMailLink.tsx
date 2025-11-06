@@ -1,4 +1,3 @@
-import GithubIcon from "@/components/icons/GithubIcon"
 import { FileItem } from "../types"
 import MailIcon from "@/components/icons/MailIcon"
 
