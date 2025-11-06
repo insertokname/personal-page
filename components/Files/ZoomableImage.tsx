@@ -45,6 +45,7 @@ export const ZoomableImage: React.FC<ZoomableImageProps> = ({ className = '', to
                 <img
                     {...imgProps}
                     className={`${baseImageClasses} ${className}`.trim()}
+                    alt='zoomed image'
                 />
                 <button
                     type="button"
@@ -77,6 +78,7 @@ export const ZoomableImage: React.FC<ZoomableImageProps> = ({ className = '', to
                         {...imgProps}
                         className={`${zoomedImageClasses} ${className}`.trim()}
                         onClick={(event) => event.stopPropagation()}
+                        alt='zoomed image'
                     />
                 </div>
             )}
